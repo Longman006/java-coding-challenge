@@ -9,9 +9,9 @@ import unbabel.app.tomasz.szypula.view.View;
 public class Controller {
     Model model;
     BorderPane borderPane;
-    public Controller(BorderPane borderPane) {
+    public Controller(BorderPane borderPane, String username, String apikey) {
 
-        model = new Model();
+        model = new Model(username,apikey);
         this.borderPane = borderPane;
 
         View view = new View(model,borderPane);

@@ -20,6 +20,10 @@ public class Translation {
         this.translatedText = new SimpleStringProperty(translatedText);
     }
 
+    public Translation() {
+        this("N/A","N/A","N/A","N/A","N/A","N/A");
+    }
+
     public String getUid() {
         return uid.get();
     }
@@ -90,5 +94,17 @@ public class Translation {
 
     public void setTranslatedText(String translatedText) {
         this.translatedText.set(translatedText);
+    }
+
+    @Override
+    public String toString() {
+        return "Translation{" +
+                "uid=" + uid +
+                ", sourceLanguage=" + sourceLanguage +
+                ", status=" + status +
+                ", targetLanguage=" + targetLanguage +
+                ", originalText=" + originalText +
+                ", translatedText=" + translatedText +
+                '}';
     }
 }

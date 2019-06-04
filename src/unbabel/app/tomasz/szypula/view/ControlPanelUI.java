@@ -25,6 +25,7 @@ public class ControlPanelUI implements CreateUI{
     TextField toTranslateText = new TextField();
     ChoiceBox languagesChoiceBox = new ChoiceBox();
     Button submitButton = new Button();
+    Button refresh = new Button();
     ObservableList<String> languages = FXCollections.observableArrayList("es","pt","en","fr");
 
     public ControlPanelUI(Model model) {
@@ -62,7 +63,18 @@ public class ControlPanelUI implements CreateUI{
             }
         });
 
-        hBox.getChildren().addAll(toTranslateText,languagesChoiceBox,submitButton);
+        /**
+         * refresh button
+         */
+        refresh.setText("Refresh");
+        refresh.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                model.refreshTranslations();
+            }
+        });
+
+        hBox.getChildren().addAll(toTranslateText,languagesChoiceBox,submitButton,refresh);
 
 
     }
