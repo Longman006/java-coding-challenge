@@ -4,7 +4,6 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -87,7 +86,7 @@ public class HttpURLConnectionHandler {
         String url = "https://sandbox.unbabel.com/tapi/v2/translation/" + translation.getUid() + "/";
 
         URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 
         con.setRequestMethod("GET");
 
@@ -112,7 +111,6 @@ public class HttpURLConnectionHandler {
 
         System.out.println(response.toString());
         HashMap<String,String> responseHashMap = JsonParser.getHashMapFromJson(response.toString());
-        System.out.println(responseHashMap);
         translation.setStatus(responseHashMap.get("status"));
         translation.setTranslatedText(responseHashMap.get("translatedText"));
 

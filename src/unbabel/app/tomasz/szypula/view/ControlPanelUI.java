@@ -15,7 +15,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 import unbabel.app.tomasz.szypula.model.Model;
-import unbabel.app.tomasz.szypula.model.Translation;
+
 
 
 public class ControlPanelUI implements CreateUI{
@@ -26,7 +26,10 @@ public class ControlPanelUI implements CreateUI{
     ChoiceBox languagesChoiceBox = new ChoiceBox();
     Button submitButton = new Button();
     Button refresh = new Button();
-    ObservableList<String> languages = FXCollections.observableArrayList("es","pt","en","fr");
+    /**
+     * This should be implemented in some other way for example using Enum for scalability, this is an easy and quick solution
+     */
+    ObservableList<String> languages = FXCollections.observableArrayList("es","pt","en","fr","zh-CN","de","ja","ru","it","hi");
 
     public ControlPanelUI(Model model) {
         this.model = model;

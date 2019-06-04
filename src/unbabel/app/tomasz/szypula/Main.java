@@ -34,9 +34,6 @@ public class Main extends Application {
         primaryStage.setTitle("Unbabel App");
         primaryStage.setScene(theScene);
         primaryStage.show();
-
-        String jsonInputString = "{\"text\" : \"Testing data output stream\", \"target_language\" : \"pt\", \"text_format\" : \"text\"}";
-
     }
 
 

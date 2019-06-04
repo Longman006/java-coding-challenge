@@ -13,7 +13,7 @@ public class View {
     TableUI tableUI ;
 
     public View(Model model, BorderPane pane) {
-
+        this.model = model;
 
         /**
          * Center
@@ -33,8 +33,6 @@ public class View {
         helpMenu.getItems().add(new MenuItem("UnBabel"));
         menuBar.getMenus().add(helpMenu);
         pane.setTop(menuBar);
-
-
 
     }
 }

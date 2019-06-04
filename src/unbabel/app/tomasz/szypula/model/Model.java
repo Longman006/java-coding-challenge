@@ -73,7 +73,6 @@ public class Model {
                 }
             }
             else if (!translation.getStatus().equals("completed")){
-                System.out.println("status ="+translation.getStatus());
                 try {
                     httpURLConnectionHandler.sendGet(translation);
                 } catch (Exception e) {
